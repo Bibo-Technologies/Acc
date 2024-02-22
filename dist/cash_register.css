@@ -1,0 +1,91 @@
+/* Extend bootstrap's built in class */
+.help-block-label {
+    font-weight: bold;
+}
+
+#btnAddProduct, #btnVoidLastTxn, #btnCancelSale, #btnApplyEmpDiscount, #currencySymbol {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+datalist {
+width: 100px;
+}
+#cartDisplay {
+    margin-right: 25%;
+}
+
+.table-borderless > tr {
+    border: none;
+}
+/*==========  Bootstrap 3 Media Queries: Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    .total-amount {
+        font-weight: bold;
+        font-size: 2em;
+    }
+   .item-display {
+     font-weight: bold;
+     font-size: 1em;
+   }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .total-amount {
+        font-weight: bold;
+        font-size: 3em;
+    }
+   .item-display {
+     font-weight: bold;
+     font-size: 2em;
+   }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+    /* Add padding when viewed on large screens */
+    .container-fluid {
+        margin: auto;
+        padding: 25px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* Product boxes */
+    .product-inputs {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .product-inputs-left {
+        padding-right: 0;
+    }
+    .product-inputs-right {
+        padding-left: 0;
+    }
+    .total-amount {
+        font-weight: bold;
+        font-size: 4em;
+    }
+   .item-display {
+     font-weight: bold;
+     font-size: 3em;
+   }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    /* Add padding when viewed on large screens */
+    .container-fluid {
+        margin: auto;
+        padding: 25px;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}

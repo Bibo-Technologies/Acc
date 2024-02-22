@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Divine Phone Service Center | Inventory System &amp; Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="img/Devine Phones.png" rel="icon">
+  
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<div id="mnu" class="msidenav">
+  <div class="logo">iX</div>
+  <div class="searchbar">
+    <input class="search" placeholder="Search products">
+    <button class="sbtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+  </div>
+  
+  <div class="spacer"></div>
+  <button class="mbtn"><i class="fa fa-list icon" aria-hidden="true"></i> Option One</button>
+  <button class="mbtn"><i class="fa fa-shopping-cart icon" aria-hidden="true"></i> Option Two</button>
+  <button class="mbtn"><i class="fa fa-user icon" aria-hidden="true"></i> Option Three</button>
+  <button class="mbtn"><i class="fa fa-bolt icon" aria-hidden="true"></i> Option Four</button>
+  <button class="mbtn"><i class="fa fa-calendar icon" aria-hidden="true"></i> Option Five</button>
+</div>
+
+
+<div class="sidenav">
+  <div class="logo"><img src="img/Devine Phones.png" alt="Logo"></div>
+  <div class="searchbar">
+    <input class="search" placeholder="Search your product">
+    <button class="sbtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+  </div>
+  <script>
+    
+// Listen for input event on the search input
+const searchInput = document.querySelector('.search');
+searchInput.addEventListener('input', function() {
+  const searchTerm = this.value.trim(); // Trim whitespace from input
+  filterProducts(searchTerm);
+});
+  </script>
+  <div class="spacer"></div>
+  <button class="mbtn"><i class="fa fa-list icon" aria-hidden="true"></i> Option One</button>
+  <button class="mbtn" id="cashRegisterBtn"><i class="fa fa-shopping-cart icon" aria-hidden="true"></i> Cash Register</button>
+  <button class="mbtn"><i class="fa fa-user icon" aria-hidden="true"></i> Option Three</button>
+  <button class="mbtn"><i class="fa fa-bolt icon" aria-hidden="true"></i> Option Four</button>
+  <button class="mbtn"><i class="fa fa-calendar icon" aria-hidden="true"></i> Option Five</button>
+</div>
+<div class="content-area">
+  <div class="mobilebar">
+    <div class="logo sml">iX</div>
+    <div class="mbh">
+    <button class="mnubtn" onclick="slideMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="page-title">Divine Phone Service Center</div>
+  <div class="page-desc">View and manage your stock</div>
+  <button id="uploadBtn"><i class="fa fa-upload"></i> Upload New Product</button>
+
+  <div id="uploadPopup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <!-- Add your upload form or content here -->
+      <h2>Upload New Product</h2>
+<form id="uploadForm">
+  <label for="productName">Product Name:</label>
+  <input type="text" id="productName" name="productName"><br><br>
+
+  <label for="productDescription">Product Description:</label>
+  <textarea id="productDescription" name="productDescription"></textarea><br><br>
+
+  <label for="productImage">Product Image:</label>
+  <input type="file" id="productImage" name="productImage"><br><br>
+
+  <label for="costPrice">Cost Price:</label>
+  <input type="number" id="costPrice" name="costPrice"><br><br>
+
+  <label for="lastSellPrice">Last Sell Price:</label>
+  <input type="number" id="lastSellPrice" name="lastSellPrice"><br><br>
+
+  <label for="buyingPrice">Buying Price:</label>
+  <input type="number" id="buyingPrice" name="buyingPrice"><br><br>
+
+  <label for="initialStock">Initial Stock:</label>
+  <input type="number" id="initialStock" name="initialStock"><br><br>
+
+  <label for="dateOfStock">Date of Stock:</label>
+  <input type="date" id="dateOfStock" name="dateOfStock"><br><br>
+
+  <label for="stockedBy">Stocked By:</label>
+<select id="stockedBy" name="stockedBy">
+  <option value="Admin">Admin</option>
+  <option value="Faith">Faith</option>
+  <option value="Prossy">Prossy</option>
+  <option value="Brendah">Brendah</option>
+  <!-- Add more options as needed -->
+</select><br><br>
+
+
+
+  <button type="submit" id="submitBtn">Submit</button>
+</form>
+
+    </div>
+  </div>
+
+  <div class="table">
+    <div class="table-head">
+      <div class="itemnum">Product ID</div>
+      <div class="itemtitle">Title</div>
+      <div class="itemprice">Price</div>
+      <div class="itemstock">Stock</div>
+      <div class="btncontainer">Actions</div>
+    </div>
+    
+    <div >
+      <div id="productList">
+        <!-- Product data will be dynamically inserted here -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+  <script>
+    const cashRegisterBtn = document.getElementById("cashRegisterBtn");
+
+cashRegisterBtn.addEventListener("click", () => {
+  // Redirect to the cash register HTML page
+  window.location.href = "cash_register.html";
+});
+
+  </script>
+<!-- partial -->
+  <script type="module" src="./script.js">
+
+</script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-storage.js"></script>
+
+
+ 
+
+</body>
+</html>
